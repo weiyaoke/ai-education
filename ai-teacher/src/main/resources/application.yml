@@ -1,0 +1,36 @@
+server:
+    port: 8099  #??
+    tomcat:
+        uri-encoding: UTF-8   #????
+spring:
+    application:
+        name: digitTeacher
+    datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://192.168.150.101:3306/ai?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+      username: root
+      password: 123
+mybatis-plus:
+  type-aliases-package: com.ai.digitteacher.entity
+  configuration:
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+  global-config:
+    field-strategy: 0
+    db-config:
+      logic-delete-field: deleted
+      id-type: assign_id
+langchain4j:
+  community:
+    dashscope:
+      chat-model:
+        model-name: qwen-max
+        api-key: sk-5c453ef6fe884a139c7f84f18dfb0a3b
+      streaming-chat-model: # 注意是 streaming-chat-model
+        model-name: qwen-max
+        api-key: sk-5c453ef6fe884a139c7f84f18dfb0a3b
+        temperature: 0.7
+
+dashscope:
+  chat-model:
+    model-name: qwen-max
+    api-key: sk-5c453ef6fe884a139c7f84f18dfb0a3b
